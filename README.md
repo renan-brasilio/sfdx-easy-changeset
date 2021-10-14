@@ -29,7 +29,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/renan-brasilio/sfdx-easy-changeset">
+  <a href="https://github.com/`github_username`/`repo_name`">
     <img src="https://avatars.githubusercontent.com/u/60192002?s=200&v=4" alt="Logo" width="80" height="80">
   </a>
 
@@ -40,9 +40,9 @@
     <br />
     <br />
     <br />
-    <a href="https://github.com/renan-brasilio/sfdx-easy-changeset/issues">Report Bug</a>
+    <a href="https://github.com/`github_username`/`repo_name`/issues">Report Bug</a>
     ·
-    <a href="https://github.com/renan-brasilio/sfdx-easy-changeset/issues">Request Feature</a>
+    <a href="https://github.com/`github_username`/`repo_name`/issues">Request Feature</a>
   </p>
 </div>
 
@@ -98,7 +98,7 @@ Just to make life a little bit easier when retrieving a Changeset/Package on Sal
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This especifc script was created for Mac OS users, I have no information (yet) about the OS version necessary to run it, only that it should works for almost all OS versions since it relys on bash.
+This specifc script was created for Mac OS users, I have no information (yet) about the OS version necessary to run it, only that it should works for almost all OS versions since it relies on bash.
 
 ### Prerequisites
 
@@ -119,7 +119,7 @@ This especifc script was created for Mac OS users, I have no information (yet) a
 
 1. Follow the pre-requisites listed above.
 2. Install Salesforce CLI, instructions [here](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm).
-3. Download the file from the latest release [here](https://github.com/renan-brasilio/sfdx-easy-changeset/releases/latest).
+3. Download the file from the latest release [here](https://github.com/`github_username`/`repo_name`/releases/latest).
 4. Put the file downloaded on your Project folder.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -179,7 +179,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 Renan Rocha - [@renanbrasilio](https://twitter.com/renanbrasilio) - renanfamous@gmail.com
 
-Project Link: [https://github.com/renan-brasilio/sfdx-easy-changeset](https://github.com/renan-brasilio/sfdx-easy-changeset)
+Project Link: [https://github.com/`github_username`/`repo_name`](https://github.com/`github_username`/`repo_name`)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -196,16 +196,16 @@ Project Link: [https://github.com/renan-brasilio/sfdx-easy-changeset](https://gi
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/renan-brasilio/sfdx-easy-changeset.svg?style=for-the-badge
-[contributors-url]: https://github.com/renan-brasilio/sfdx-easy-changeset/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/renan-brasilio/sfdx-easy-changeset.svg?style=for-the-badge
-[forks-url]: https://github.com/renan-brasilio/sfdx-easy-changeset/network/members
-[stars-shield]: https://img.shields.io/github/stars/renan-brasilio/sfdx-easy-changeset.svg?style=for-the-badge
-[stars-url]: https://github.com/renan-brasilio/sfdx-easy-changeset/stargazers
-[issues-shield]: https://img.shields.io/github/issues/renan-brasilio/sfdx-easy-changeset.svg?style=for-the-badge
-[issues-url]: https://github.com/renan-brasilio/sfdx-easy-changeset/issues
-[license-shield]: https://img.shields.io/github/license/renan-brasilio/sfdx-easy-changeset.svg?style=for-the-badge
-[license-url]: https://github.com/renan-brasilio/sfdx-easy-changeset/blob/master/LICENSE.txt
+[contributors-shield]: https://img.shields.io/github/contributors/`github_username`/`repo_name`.svg?style=for-the-badge
+[contributors-url]: https://github.com/`github_username`/`repo_name`/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/`github_username`/`repo_name`.svg?style=for-the-badge
+[forks-url]: https://github.com/`github_username`/`repo_name`/network/members
+[stars-shield]: https://img.shields.io/github/stars/`github_username`/`repo_name`.svg?style=for-the-badge
+[stars-url]: https://github.com/`github_username`/`repo_name`/stargazers
+[issues-shield]: https://img.shields.io/github/issues/`github_username`/`repo_name`.svg?style=for-the-badge
+[issues-url]: https://github.com/`github_username`/`repo_name`/issues
+[license-shield]: https://img.shields.io/github/license/`github_username`/`repo_name`.svg?style=for-the-badge
+[license-url]: https://github.com/`github_username`/`repo_name`/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/renan-brasilio
+[linkedin-url]: https://linkedin.com/in/`github_username`
 [product-screenshot]: images/screenshot.png
