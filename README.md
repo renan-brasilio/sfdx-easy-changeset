@@ -29,20 +29,20 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/renan-brasilio/sfdx-easy-changeset">
-    <img src="https://avatars.githubusercontent.com/u/60192002?s=200&v=4" alt="Logo" width="80" height="80">
-  </a>
-
-<h3 align="center">SFDX ORG Easy Changeset/Package Downloader</h3>
+<h3 align="center">WIP: SFDX - Easy Tools</h3>
 
   <p align="center">
-    Using SFDX + Shell/Bash Scripts, Retrieve a Changeset/Package from Salesforce based on the Origin ORG and the Changeset/Package Name
+    Using SFDX + Shell/Bash Scripts:
+    <br />
+    - <b>changeset</b>: Retrieve a Changeset/Package from Salesforce based on the Origin ORG and the Changeset/Package Name.
+    <br />
+    - <b>deploy</b>: Deploy the Change set from Salesforce based on the Origin ORG and the Changeset/Package Name.
     <br />
     <br />
     <br />
-    <a href="https://github.com/renan-brasilio/sfdx-easy-changeset/issues">Report Bug</a>
+    <a href="https://github.com/renan-brasilio/sfdx-easy-scripts/issues">Report Bug</a>
     ·
-    <a href="https://github.com/renan-brasilio/sfdx-easy-changeset/issues">Request Feature</a>
+    <a href="https://github.com/renan-brasilio/sfdx-easy-scripts/issues">Request Feature</a>
   </p>
 </div>
 
@@ -79,7 +79,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-Just to make life a little bit easier when retrieving a Changeset/Package on Salesforce using SFDX <!--`github_username`, `repo_name`, `twitter_handle`, `linkedin_username`, `email`, `email_client`, `project_title`, `project_description`-->
+Just to make life a little bit easier when sing SFDX
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -87,9 +87,9 @@ Just to make life a little bit easier when retrieving a Changeset/Package on Sal
 
 ### Built With
 
-* [Salesforce CLI](https://developer.salesforce.com/tools/sfdxcli)
-* [./jq](https://stedolan.github.io/jq/)
 * [Shell Scripting Primer](https://developer.apple.com/library/archive/documentation/OpenSource/Conceptual/ShellScripting/shell_scripts/shell_scripts.html)
+* [./jq](https://stedolan.github.io/jq/)
+* [Salesforce CLI](https://developer.salesforce.com/tools/sfdxcli)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -98,7 +98,7 @@ Just to make life a little bit easier when retrieving a Changeset/Package on Sal
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This especifc script was created for Mac OS users, I have no information (yet) about the OS version necessary to run it, only that it should works for almost all OS versions since it relys on bash.
+This specifc script was created for Mac OS users, I have no information (yet) about the OS version necessary to run it, only that it should works for almost all OS versions since it relies on bash.
 
 ### Prerequisites
 
@@ -119,7 +119,7 @@ This especifc script was created for Mac OS users, I have no information (yet) a
 
 1. Follow the pre-requisites listed above.
 2. Install Salesforce CLI, instructions [here](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm).
-3. Download the file from the latest release [here](https://github.com/renan-brasilio/sfdx-easy-changeset/releases/latest).
+3. Download the file from the latest release [here](https://github.com/renan-brasilio/sfdx-easy-scripts/releases/latest).
 4. Put the file downloaded on your Project folder.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -179,7 +179,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 Renan Rocha - [@renanbrasilio](https://twitter.com/renanbrasilio) - renanfamous@gmail.com
 
-Project Link: [https://github.com/renan-brasilio/sfdx-easy-changeset](https://github.com/renan-brasilio/sfdx-easy-changeset)
+Project Link: [https://github.com/renan-brasilio/sfdx-easy-scripts](https://github.com/renan-brasilio/sfdx-easy-scripts)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -196,16 +196,16 @@ Project Link: [https://github.com/renan-brasilio/sfdx-easy-changeset](https://gi
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/renan-brasilio/sfdx-easy-changeset.svg?style=for-the-badge
-[contributors-url]: https://github.com/renan-brasilio/sfdx-easy-changeset/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/renan-brasilio/sfdx-easy-changeset.svg?style=for-the-badge
-[forks-url]: https://github.com/renan-brasilio/sfdx-easy-changeset/network/members
-[stars-shield]: https://img.shields.io/github/stars/renan-brasilio/sfdx-easy-changeset.svg?style=for-the-badge
-[stars-url]: https://github.com/renan-brasilio/sfdx-easy-changeset/stargazers
-[issues-shield]: https://img.shields.io/github/issues/renan-brasilio/sfdx-easy-changeset.svg?style=for-the-badge
-[issues-url]: https://github.com/renan-brasilio/sfdx-easy-changeset/issues
-[license-shield]: https://img.shields.io/github/license/renan-brasilio/sfdx-easy-changeset.svg?style=for-the-badge
-[license-url]: https://github.com/renan-brasilio/sfdx-easy-changeset/blob/master/LICENSE.txt
+[contributors-shield]: https://img.shields.io/github/contributors/renan-brasilio/sfdx-easy-scripts.svg?style=for-the-badge
+[contributors-url]: https://github.com/renan-brasilio/sfdx-easy-scripts/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/renan-brasilio/sfdx-easy-scripts.svg?style=for-the-badge
+[forks-url]: https://github.com/renan-brasilio/sfdx-easy-scripts/network/members
+[stars-shield]: https://img.shields.io/github/stars/renan-brasilio/sfdx-easy-scripts.svg?style=for-the-badge
+[stars-url]: https://github.com/renan-brasilio/sfdx-easy-scripts/stargazers
+[issues-shield]: https://img.shields.io/github/issues/renan-brasilio/sfdx-easy-scripts.svg?style=for-the-badge
+[issues-url]: https://github.com/renan-brasilio/sfdx-easy-scripts/issues
+[license-shield]: https://img.shields.io/github/license/renan-brasilio/sfdx-easy-scripts.svg?style=for-the-badge
+[license-url]: https://github.com/renan-brasilio/sfdx-easy-scripts/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/renan-brasilio
 [product-screenshot]: images/screenshot.png
