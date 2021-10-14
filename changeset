@@ -1,0 +1,146 @@
+#!/bin/bash
+version="v1.0"
+#@description: Retrieve a Changeset/Package from Salesforce based on the Origin ORG and the Changeset/Package Name.
+#@changesHistory:
+#+----------------+----------------------+--------------------------------------------+
+#| Date           | Autor                | Description                                |
+#+----------------+----------------------+--------------------------------------------+
+#Oct 14, 2021     Renan Rocha           - v1.0: Shell Script created.
+
+######## FUNCTIONS ########
+    #@description: Insert values on the map
+    put() {
+        if [ "$#" != 3 ]; then exit 1; fi
+        mapName=$1; key=$2; value=`echo $3 | sed -e "s/ /:SP:/g"`
+        eval map="\"\$$mapName\""
+        map="`echo "$map" | sed -e "s/--$key=[^ ]*//g"` --$key=$value"
+        eval $mapName="\"$map\""
+    }
+
+    #@description: Get values from the map
+    get() {
+        mapName=$1; key=$2; valueFound="false"
+
+        eval map=\$$mapName
+
+        for keyValuePair in ${map};
+        do
+            case "$keyValuePair" in
+                --$key=*) value=`echo "$keyValuePair" | sed -e 's/^[^=]*=//'`
+                        valueFound="true"
+            esac
+            if [ "$valueFound" == "true" ]; then break; fi
+        done
+        value=`echo $value | sed -e "s/:SP:/ /g"`
+    }
+######## FUNCTIONS - END ########
+
+######## JQ ########
+    # Retrieve from the JSON the keys
+    orgKeys=$(jq '.orgs | keys[] as $k | "\($k)"' '/Users/renanrocha/.sfdx/alias.json' | sed 's/"//g')
+
+    # Retrieve from the JSON the values
+    orgValues=$(jq '.orgs | values[] as $k | "\($k)"' '/Users/renanrocha/.sfdx/alias.json' | sed 's/"//g')
+######## JQ - END ########
+
+######## ARRAYS ########
+    # Create the arrays
+    declare -a orgKeysList
+    declare -a orgValuesList
+
+    i=0
+    for key in $orgKeys
+    do
+        orgKeysList[$i]=$key
+        i=$(($i+1))
+    done
+
+    j=0
+    for key in $orgValues
+    do
+        orgValuesList[$j]=$key
+        j=$(($j+1))
+    done
+######## ARRAYS - END ########
+
+######## MAPS ########
+    # Fill Map mapUsernameToAlias
+    for (( l=0; l <= (${#orgValuesList[@]} - 1); l++ ))
+    do  
+        put "mapUsernameToAlias" "${orgValuesList[$l]}" "${orgKeysList[$l]}"
+    done
+
+    # Fill Map mapAliasToUsername
+    for (( k=0; k <= (${#orgKeysList[@]} - 1); k++ ))
+    do  
+        put "mapAliasToUsername" "${orgKeysList[$k]}" "${orgValuesList[$k]}"
+    done
+######## MAPS - END ########
+
+######## SCREEN ########
+    clear
+    echo 
+
+    # Header
+    echo "SFDX ORG Easy Changeset/Package Shell Bash Downloader $version"
+    echo
+    echo "*Important notes:"
+    echo "¹If you don't see your ORG on the list below, make sure you created the project using SFDX and authorized an ORG on it"
+    echo "²This script retrieves the list from the file ~/.sfdx/alias.json"
+    echo "³This script works only with Packages created on the ORG, not the installed ones."
+    echo "⁴Salesforce Official SFDX Auth Documentation: https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_auth_web_flow.htm"
+    echo
+
+    # Origin ORG Selection: Values Definition
+    PS3="- Selection: "
+    quit="Quit"
+    endingApp="- Ending application."
+    optionsOrg=($orgKeys $quit)
+
+    echo "Please select the Origin ORG: "
+
+    # Origin ORG Selection
+    select opt in "${optionsOrg[@]}" 
+    do
+        if [ -z "$opt" ]
+        then
+            echo "Invalid option, please try again." && echo
+        elif [ $opt = $quit ] 
+        then
+            echo && echo "$endingApp" && exit 0
+        else
+            originOrg="$opt" && break
+        fi
+    done
+
+    # Print the selection + the username related
+    echo && get "mapAliasToUsername" "$originOrg" && echo "- $originOrg selected (Username: $value)"
+
+    # Gets the package name
+    echo && read -p '- Changeset/Package Name: ' pkgName
+
+    # Save the current directory
+    cwd=$(pwd)
+
+    # Go to the output directory
+    cd ~/SFDX/ChangeSets/$originOrg && echo && echo "- Checking if there's already a file with the same name..."
+
+    # Save the filename
+    fileName=~/SFDX/ChangeSets/$originOrg/$pkgName.zip
+
+    # Check if there's already a file with the same name and remove it
+    if [ -f "$fileName" ] 
+    then
+        echo && echo "- Found a file with the same name, deleting..." && rm $pkgName.zip
+    fi
+
+    # Show the package and origin org selected before start
+    echo && echo "- Retrieving Changeset/Package: $pkgName from $originOrg..." && echo
+
+    # Retrieve the changeset/package, save it on ~/SFDX/ChangeSets/ and rename it
+    sfdx force:mdapi:retrieve -u $originOrg -p $pkgName -w 10 -r ~/SFDX/ChangeSets/$originOrg
+    
+    # Rename the file
+    mv unpackaged.zip $pkgName.zip && cd ~/SFDX/$originOrg
+    echo && echo "- File moved and renamed to: ~/SFDX/ChangeSets/$originOrg/$pkgName.zip" && cd $cwd && echo && echo "$endingApp"
+######## SCREEN - END ########
