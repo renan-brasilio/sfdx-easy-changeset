@@ -1,11 +1,12 @@
 #!/bin/bash
-version="v1.0"
+version="v1.1"
 #@description: Retrieve a Changeset/Package from Salesforce based on the Origin ORG and the Changeset/Package Name.
 #@changesHistory:
 #+----------------+----------------------+--------------------------------------------+
 #| Date           | Autor                | Description                                |
 #+----------------+----------------------+--------------------------------------------+
 #Oct 14, 2021     Renan Rocha           - v1.0: Shell Script created.
+#Oct 14, 2021     Renan Rocha           - v1.1: Fixed JQ to work on with the ~ expression.
 
 ######## FUNCTIONS ########
     #@description: Insert values on the map
@@ -37,10 +38,12 @@ version="v1.0"
 
 ######## JQ ########
     # Retrieve from the JSON the keys
-    orgKeys=$(jq '.orgs | keys[] as $k | "\($k)"' '/Users/renanrocha/.sfdx/alias.json' | sed 's/"//g')
+    cd ~/.sfdx/
+    orgKeys=$(jq '.orgs | keys[] as $k | "\($k)"' 'alias.json' | sed 's/"//g')
 
     # Retrieve from the JSON the values
-    orgValues=$(jq '.orgs | values[] as $k | "\($k)"' '/Users/renanrocha/.sfdx/alias.json' | sed 's/"//g')
+    orgValues=$(jq '.orgs | values[] as $k | "\($k)"' 'alias.json' | sed 's/"//g')
+    cd $cwd
 ######## JQ - END ########
 
 ######## ARRAYS ########
